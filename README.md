@@ -18,3 +18,17 @@ https://editor.swagger.io/?url=https%3A%2F%2Fstorage.googleapis.com%2Frazoyo-exa
 
 Thanks for Rrazoyo creating this exam for the magento developer. 
 https://exam.razoyo.com/magento
+
+
+Features:
+
+1.Set the configuration at Admin → Stores → Configuration → Customers → Car Profile.
+2.Use Ajax to update the message and car information after clicking the "Save" button.
+3.Add security checks when posting data to the custom controller method.
+4.Use a searchable select dropdown to enhance the customer shopping experience.
+5.Write unit tests for the code.
+6.Make the design responsive.
+7.Add the CSP whitelist for car images.
+
+Notice:
+There is an issue with the API when finding a car by ID, resulting in a 403 error. You can check it at Swagger Editor. As a workaround, static data is being used to replace the API response.
