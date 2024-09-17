@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Public alias for the application entry point
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="Razoyo_CarProfile::css/select2.css" rel="stylesheet" type="text/css" />
+        <css src="Razoyo_CarProfile::css/carForm.css" rel="stylesheet" type="text/css" />
+        <script src="Razoyo_CarProfile::js/carFrom.js" />
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Car Profile</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Razoyo\CarProfile\Block\CarProfile" name="car.profile.form" template="Razoyo_CarProfile::form.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+

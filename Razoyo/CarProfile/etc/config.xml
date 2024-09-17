@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Public alias for the application entry point
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ * Created By: jason
+ * 9/16/24
+ */
+ -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/config.xsd">
+    <default>
+        <car_profile>
+            <general>
+                <enabled>1</enabled> <!-- Enabled by default -->
+                <api_path>https://exam.razoyo.com/api/cars</api_path>
+            </general>
+        </car_profile>
+    </default>
+</config>

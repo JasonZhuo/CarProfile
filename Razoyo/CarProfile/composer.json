@@ -1,0 +1,21 @@
+{
+  "name": "razoyo/module-car-profile",
+  "version": "1.0.0",
+  "description": "customer to choose a from a pre-determined list of cars and save the selection to the customer profile.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-customer": "103.0.*"
+  },
+  "license": [
+    "Open Software License (OSL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Razoyo\\CarProfile\\": ""
+    }
+  }
+}

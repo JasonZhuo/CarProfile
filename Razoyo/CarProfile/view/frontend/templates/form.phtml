@@ -1,0 +1,54 @@
+<?php
+$carProfileId = $block->getCarProfile();
+$carInfo = $carProfileId ? $block->getCarInfoById($carProfileId) : null;
+?>
+<div class="car-profile-section">
+    <!-- Car Info Section -->
+    <div id="car-info-container">
+        <?php if ($carInfo): ?>
+            <div class="car-info">
+                <img src="<?=  $carInfo['image']; ?>"
+                     alt="<?= htmlspecialchars($carInfo['model'] . '-' . $carInfo['make']); ?>"
+                     class="car-image"/>
+                <div class="car-details">
+                    <h3>Car Information</h3>
+                    <p><strong>Brand:</strong> <?= htmlspecialchars($carInfo['make']); ?></p>
+                    <p><strong>Model:</strong> <?= htmlspecialchars($carInfo['model']); ?></p>
+                    <p><strong>Year:</strong> <?= htmlspecialchars($carInfo['year']); ?></p>
+                    <p><strong>Seats:</strong> <?= htmlspecialchars($carInfo['seats']); ?></p>
+                    <p><strong>Mpg:</strong> <?= htmlspecialchars($carInfo['mpg']); ?></p>
+                    <p><strong>Price:</strong> <?= htmlspecialchars('$'.$carInfo['price']); ?></p>
+                </div>
+            </div>
+        <?php else: ?>
+            <p class="car-info-empty">No car selected. Please choose a car from the list and save your selection.</p>
+        <?php endif; ?>
+    </div>
+
+    <!-- Car Profile Form -->
+    <div class="car-form-section">
+        <form id="car-profile-form" action="<?= $block->getUrl('carprofile/index/save') ?>" method="post">
+            <?= $block->getBlockHtml('formkey') ?>
+            <label for="car">Select Car</label>
+            <div class="form-group">
+                <select name="car_id" id="car" class="select2">
+                    <option value="">-- Please select --</option>
+                    <?php foreach ($block->getCarsList() as $car): ?>
+                        <option value="<?= $car['id']; ?>"><?= htmlspecialchars($car['make'] . ' ' . $car['model']); ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <button type="button" id="save-car-profile">Save</button>
+            </div>
+        </form>
+        <!-- Section to show messages -->
+        <div id="car-profile-message"></div>
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+</script>

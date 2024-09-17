@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Public alias for the application entry point
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ * Created By: jason
+ * 9/16/24
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="car_profile" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Car Profile</label>
+            <tab>customer</tab>
+            <resource>Magento_Customer::config_customer</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[When set to Yes, this account menu item will appear on the customer dashboard as "My Car Profile".]]></comment>
+                </field>
+                <field id="api_path" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Path</label>
+                    <depends>
+                        <field id="enabled">1</field> <!-- Text field depends on the 'enabled' field -->
+                    </depends>
+                    <frontend_class>validate-url</frontend_class> <!-- Adds URL validation -->
+                    <comment><![CDATA[Please enter a valid URL starting with "https://" or "http://".]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
