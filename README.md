@@ -31,4 +31,4 @@ Features:
 7.Add the CSP whitelist for car images.
 
 Notice:
-There is an issue with the API when finding a car by ID, resulting in a 403 error. You can check it at Swagger Editor. As a workaround, static data is being used to replace the API response.
+There is an issue with the API when finding a car by ID with the token, resulting in a 403 error.
