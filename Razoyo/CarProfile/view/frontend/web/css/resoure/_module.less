@@ -1,0 +1,118 @@
+.car-profile-section {
+  padding: 20px;
+}
+
+#car-info-container {
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+}
+
+.car-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .car-details {
+    flex: 1;
+  }
+}
+
+.car-info h3 {
+  margin-top: 0;
+}
+
+.car-form-section {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #ddd; /* Frame around the form */
+  background-color: #fff; /* Background color for the form */
+}
+
+#car-profile-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+
+  select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Border for the select input */
+  }
+
+  button {
+    flex-shrink: 0;
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 7px 20px; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+
+    &:hover {
+      background-color: #0056b3; /* Darker background color on hover */
+    }
+  }
+}
+
+.car-info-empty {
+  margin: 0 0 10px;
+  padding: 12px 20px 12px 10px;
+  display: block;
+  font-size: 1.3rem;
+  background: #fdf0d5;
+  color: #6f4400;
+  position: relative;
+  border-radius: 4px;
+}
+
+#car-profile-message .message {
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .car-info {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+    }
+
+    .car-details {
+      width: 100%;
+    }
+  }
+
+  #car-profile-form {
+    flex-direction: column;
+    align-items: stretch;
+
+    select {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%; /* Make the button full-width on mobile */
+    }
+  }
+
+  .select2.select2-container.select2-container--default {
+    width: 100% !important;
+  }
+}
