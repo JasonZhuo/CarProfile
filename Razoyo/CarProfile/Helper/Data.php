@@ -78,13 +78,18 @@ class Data extends AbstractHelper
      */
     public function getCarInfoById($carId)
     {
-        /*$curl = curl_init();
+        $curl = curl_init();
+        $token="SFMyNTY.g2gDbQAAABY6OmZmZmY6MTY5LjI1NC4xNjkuMTI2bgYA3cboCpIBYgABUYA.6anxdSuXry6sSIS7t6of_87B1EEEIXVT3JlJkv8Ta4c";
         $url = $this->getApiPath() . '/' . $carId;
 
         curl_setopt_array($curl, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER => ['accept: application/json'],
+            CURLOPT_HTTPHEADER => [
+            "accept: application/json",
+            "Authorization: Bearer " . $token
+        ],
             CURLOPT_SSL_VERIFYPEER => false, // For testing purposes; set to true in production
         ]);
 
@@ -103,8 +108,8 @@ class Data extends AbstractHelper
             return $data['car']; // Adjust based on the actual structure of the response
         }
 
-        return null;*/
-        return array (
+        return null;
+        /*return array (
             'id' => 'abcdefghijklmnop',
             'year' => 2024,
             'make' => 'Ford',
@@ -113,6 +118,7 @@ class Data extends AbstractHelper
             'seats' => 5,
             'mpg' => 30,
             'image' => 'https://static.cargurus.com/images/forsale/2024/08/25/17/49/2025_lexus_nx-pic-3794297662994790958-1024x768.jpeg',
-        );
+        );*/
+
     }
 }
