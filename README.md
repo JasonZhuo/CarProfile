@@ -1,34 +1,67 @@
-Magento2 Custom module -- Car Profile
+# Razoyo_CarProfile module
+Razoyo_CarProfile module allows a customer to choose a from a pre-determined list of cars and save the selection to the customer profile.
 
-Description:
-Module called Razoyo_CarProfile that allows a customer to choose a from a pre-determined list of cars and save the selection to the customer profile.
+## Installation details
 
-Requirements:
+The Razoyo_CarProfile module makes irreversible changes in a database during installation. You cannot disable or uninstall this module.
 
-1.The module must work on the latest supported Magento 2 version.
-2.You must include screenshots that showcase your module in your Github repository.
-3.Add a new account menu item to the customer dashboard called "My Car Profile".
-4.Build a form that allows the user to select a car from the listCars API.
-5.When the user saves the form, it should save thier car selection to their customer profile.
-6.If the customer has a car saved, it should render an image of the car and some basic information about it in the "My Car Profile" tab.
-7.The customer should be able to change their car at any time.
+Download the Razoyo_CarProfile module package or clone it from the repository
 
-API resoure:
-https://editor.swagger.io/?url=https%3A%2F%2Fstorage.googleapis.com%2Frazoyo-exam-spec%2Fcars.yaml%3Fv%3D22.05.06
+Enabled: 
 
-Thanks for Rrazoyo creating this exam for the magento developer. 
-https://exam.razoyo.com/magento
+php bin/magento module:enable Razoyo_CarProfile
+
+php bin/magento setup:upgrade
+
+php bin/magento setup:di:compile
+
+php bin/magento setup:static-content:deploy -f
+
+php bin/magento cache:clean
+
+Disabled:
+
+php bin/magento module:disable Razoyo_CarProfile
+
+cd /path/to/magento/app/code/Razoyo
+sudo rm -rf CarProfile
+
+php bin/magento setup:upgrade
+
+php bin/magento setup:di:compile
+
+php bin/magento setup:static-content:deploy -f
+
+php bin/magento cache:clean
 
 
-Features:
+## Additional information
 
-1.Set the configuration at Admin → Stores → Configuration → Customers → Car Profile.
-2.Use Ajax to update the message and car information after clicking the "Save" button.
-3.Add security checks when posting data to the custom controller method.
-4.Use a searchable select dropdown to enhance the customer shopping experience.
-5.Write unit tests for the code.
-6.Make the design responsive.
-7.Add the CSP whitelist for car images.
+#1. Configurable Settings (check Screenshot)
 
-Notice:
-There is an issue with the API when finding a car by ID with the token, resulting in a 403 error.
+Configure the Car Profile feature via the Magento Admin Panel:
+Navigate to Admin → Stores → Configuration → Customers → Car Profile to enable and customize the functionality.
+
+#2. AJAX Integration (check Screenshot)
+
+Utilize AJAX to dynamically update the car information and status messages without reloading the page when users click the "Save" button. This enhances performance and user experience.
+
+#3. Enhanced Security
+
+Implement security measures by adding validation checks in the custom controller to ensure secure handling of posted data, reducing the risk of malicious input.
+
+#4. Searchable Select Dropdown (check Screenshot)
+
+Improve the customer experience by integrating a searchable select dropdown, allowing users to quickly find and select car models, making the interface more user-friendly.
+
+#5 Unit Testing
+
+Ensure code quality and reliability by writing unit tests for the module's core functionality, covering various use cases and error handling.
+
+#6 Responsive Design (check Screenshot)
+
+Design the user interface to be fully responsive, providing an optimal viewing experience across a wide range of devices, from desktop to mobile.
+
+#7 CSP Whitelist
+
+Add Content Security Policy (CSP) rules to allow the display of car images from external sources by whitelisting the appropriate domains for secure content loading.
